@@ -1,3 +1,5 @@
+## Forensic Analysis Workflow
+
 ## 1. Basic Write Blocker Setup
 
 The _write blocker_ can be configured directly on the device where the acquired image analysis is intended to be performed. However, it is highly recommended to use a dedicated device.
