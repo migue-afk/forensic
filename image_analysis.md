@@ -35,6 +35,18 @@ foremost -t jpeg -o output -i summer.img
 
 > Make sure that the `output` directory exists before running the command.
 
+---
 
+### `strings` (extraction of text strings)
 
+There are text strings that may contain useful information, such as passwords, commands, error messages, usernames, among others. We can extract this information using the `strings` command, which can be used with images, memory dumps, executable files, among others.
 
+```bash
+strings imgforensics.img
+```
+
+We can also use it together with `grep` to improve the search, especially if we have clues about what we are looking for.
+
+```bash
+strings imgforensics.img | grep -i "pass"
+```
