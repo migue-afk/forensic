@@ -1,0 +1,40 @@
+In the obtained image there may be files that were deleted but are still present. We can try to recover potential files using the following tools:
+
+---
+
+### `photorec` (recovers files regardless of the filesystem)
+
+Allows scanning the image and recovering files (.jpg, .pdf, .docx, etc.), even if there is no partition table.
+
+```bash
+sudo photorec imgforensics.img
+```
+
+> Recovery may take some time.
+> It is recommended to choose a destination disk with capacity larger than the image size.
+
+Once files are recovered, they can be filtered by type for a more detailed inspection. For example:
+
+```bash
+# To filter .txt files
+find . -iname "*.txt" | xargs -I {} cp {} alltxt/
+
+# To filter .png files
+find . -iname "*.png" | xargs -I {} cp {} allpng/
+```
+
+---
+
+### `foremost` (file-type-based recovery)
+
+In case you want to recover files of a specific type, you can use the following command:
+
+```bash
+foremost -t jpeg -o output -i summer.img
+```
+
+> Make sure that the `output` directory exists before running the command.
+
+
+
+
