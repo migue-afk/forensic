@@ -62,18 +62,25 @@ Acquiring the forensic image is a critical step, as the integrity of the origina
 If cloning is done on the same drive:
 
 ```bash
-sudo dcfldd if=/dev/sdX of=imgforensics.img hash=sha256 hashlog=hashes.log status=on
+sudo dcfldd if=/dev/sdX of=imgforensics.img bs=4M hash=sha256 hashlog=hashes.txt errlog=errorlog.txt statusinterval=5
 ```
 
 If we are using a dedicated device with a _write blocker_ and want to send the copy to a remote server:
 
 ```bash
-sudo dcfldd if=/dev/sdX bs=4M hash=sha256 hashlog=hashes.log | ssh user@ip "cat > /destiny/imgforensics.img"
+sudo dcfldd if=/dev/sdX bs=4M hash=sha256 hashlog=hashes.txt errlog=errorlog.txt | ssh user@ip "cat > /destiny/imgforensics.img"
 ```
 
 The completion time will depend on the hardware and transfer speed.
 
 The resulting bit-by-bit image can have formats such as **.dd, .E01, .img**, among others, depending on the needs of the analysis.
+
+To carry out a cloning in two destinations, from the acquired image we use the following command line.
+
+```bash
+sudo dcfldd if=/dev/sdX bs=4M of=/dev/sdY/imgforen1.img of=/dev/sdZ/imgforen2.img hash=sha256 hashlog=hashlog.txt errlog=errorlog.txt statusinterval=5
+```
+> of=/dev/sdY is the destiny 1 and of=/dev/sdZ is the destity 2
 
 ### Integrity Check
 
