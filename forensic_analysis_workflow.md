@@ -75,6 +75,7 @@ The completion time will depend on the hardware and transfer speed.
 
 The resulting bit-by-bit image can have formats such as **.dd, .E01, .img**, among others, depending on the needs of the analysis.
 
+### Cloned in two destinations
 To carry out a cloning in two destinations, from the acquired image we use the following command line.
 
 ```bash
