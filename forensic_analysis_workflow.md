@@ -79,9 +79,9 @@ The resulting bit-by-bit image can have formats such as **.dd, .E01, .img**, amo
 To carry out a cloning in two destinations, from the acquired image we use the following command line.
 
 ```bash
-sudo dcfldd if=/dev/sdX bs=4M of=/dev/sdY/imgforen1.img of=/dev/sdZ/imgforen2.img hash=sha256 hashlog=hashlog.txt errlog=errorlog.txt statusinterval=5
+sudo dcfldd if=/dev/sdX bs=4M of=/mnt/disk1/imgforen1.img of=/mnt/disk2/imgforen2.img hash=sha256 hashlog=hashlog.txt errlog=errorlog.txt statusinterval=5
 ```
-> of=/dev/sdY is the destiny 1 and of=/dev/sdZ is the destity 2
+> of=/mnt/disk1 is the destiny 1 and of=/mnt/disk2 is the destity 2
 
 ### Integrity Check
 
