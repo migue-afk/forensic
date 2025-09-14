@@ -50,3 +50,10 @@ We can also use it together with `grep` to improve the search, especially if we 
 ```bash
 strings imgforensics.img | grep -i "pass"
 ```
+---
+
+### `bulk_extractor` (attern extraction)
+
+```bash
+bulk_extractor -o outputdir -e all -x gzip -x zip imgforensics.img
+```
