@@ -52,7 +52,7 @@ strings imgforensics.img | grep -i "pass"
 ```
 ---
 
-### `bulk_extractor` (attern extraction)
+### `bulk_extractor` (pattern extraction)
 
 ```bash
 bulk_extractor -o outputdir -e all -x gzip -x zip imgforensics.img
